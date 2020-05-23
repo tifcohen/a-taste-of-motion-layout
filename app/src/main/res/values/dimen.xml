@@ -2,5 +2,5 @@
 <resources>
     <dimen name="radius_btn">100dp</dimen>
 
-    <dimen name="btn_size">45dp</dimen>
+    <dimen name="btn_size">50dp</dimen>
 </resources>

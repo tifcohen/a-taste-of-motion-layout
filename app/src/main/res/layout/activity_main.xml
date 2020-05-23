@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/activity_main_scene"
+    android:id="@+id/motion_layout"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/hello_world"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="Hello World!"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +37,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/label1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,7 +82,7 @@
             android:id="@+id/label3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/convert_desc"
+            android:text="@string/receive_desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/btn3"
             app:layout_constraintStart_toStartOf="@id/btn3"
