@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">The Basics of Motion Layout</string>
+
+    <string name="send_desc">send</string>
+    <string name="convert_desc">convert</string>
+    <string name="receive_desc">receive</string>
 </resources>

@@ -1,18 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/hello_world"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="20dp"
         android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hello_world">
+
+        <ImageButton
+            android:id="@+id/btn1"
+            style="@style/btn_style"
+            android:contentDescription="@string/send_desc"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toTopOf="@id/label1"
+            app:layout_constraintEnd_toStartOf="@id/btn2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            android:text="@string/send_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btn1"
+            app:layout_constraintStart_toStartOf="@id/btn1"
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
+
+        <ImageButton
+            android:id="@+id/btn2"
+            style="@style/btn_style"
+            android:contentDescription="@string/convert_desc"
+            android:src="@drawable/ic_convert"
+            app:layout_constraintBottom_toTopOf="@id/label2"
+            app:layout_constraintEnd_toStartOf="@id/btn3"
+            app:layout_constraintStart_toEndOf="@id/btn1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/convert_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btn2"
+            app:layout_constraintStart_toStartOf="@id/btn2"
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
+
+        <ImageButton
+            android:id="@+id/btn3"
+            style="@style/btn_style"
+            android:contentDescription="@string/receive_desc"
+            android:src="@drawable/ic_receive"
+            app:layout_constraintBottom_toTopOf="@id/label3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/convert_desc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/btn3"
+            app:layout_constraintStart_toStartOf="@id/btn3"
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scrollable_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_container"
+        tools:listitem="@layout/list_single_item"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

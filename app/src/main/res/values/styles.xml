@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="btn_style">
+        <item name="android:layout_height">@dimen/btn_size</item>
+        <item name="android:layout_width">@dimen/btn_size</item>
+        <item name="android:background">@drawable/btn_bg</item>
+    </style>
 </resources>

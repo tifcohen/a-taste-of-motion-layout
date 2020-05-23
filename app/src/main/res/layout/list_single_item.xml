@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:background="#ffffff"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:id="@+id/item_label"-->
+    <!--    android:text="this is text"-->
+    <!--    android:padding="10dp">-->
+
+    <!--</androidx.appcompat.widget.AppCompatTextView>-->
+
+    <TextView
+    android:id="@+id/textView"
+    android:textSize="14sp"
+    android:textColor="#000000"
+    android:layout_width="0dp"
+    android:text="Dummy Item"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_height="wrap_content" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
