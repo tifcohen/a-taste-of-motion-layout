@@ -6,8 +6,8 @@
             <corners android:radius="@dimen/radius_btn" />
             <gradient
                 android:angle="45"
-                android:endColor="@color/colorPrimary"
-                android:startColor="@color/colorAccent"
+                android:endColor="@color/light_purple"
+                android:startColor="@color/colorPrimaryDark"
                 android:type="linear" />
         </shape>
     </item>

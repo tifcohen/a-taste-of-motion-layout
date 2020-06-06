@@ -1,24 +1,25 @@
 package com.example.thebasicsofmotionlayout
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val viewAdapter = DummyRecyclerAdapter()
+        val viewAdapter = CustomAdapter(createList())
 
         scrollable_content.apply {
+            this.addItemDecoration(DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL))
             adapter = viewAdapter
         }
 
@@ -37,23 +38,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {
-                (1 - progress).also {
-                    label1.run {
-//                        alpha = it
-                        scaleX = it
-                        scaleY = it
-                    }
-                    label2.alpha = it
-                    label3.alpha = it
-                }
+
             }
         })
     }
 
     private fun createList(): List<String> {
         val list = mutableListOf<String>()
-        for (i in 0..20) {
-            list.add("dummy item ${i + 1}")
+        for (i in 0..30) {
+            val index = i + 1
+            list.add("Account $index:\nBalance: ${index*(index*10/3)}$")
         }
         return list
     }
@@ -82,20 +76,4 @@ class CustomAdapter(private val itemsList: List<String>) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
         holder.label.text = itemsList[position]
     }
-}
-
-class DummyRecyclerAdapter : RecyclerView.Adapter<DummyRecyclerAdapter.ViewHolder>() {
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DummyRecyclerAdapter.ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_single_item, parent, false) as ConstraintLayout)
-    }
-
-    override fun getItemCount(): Int {
-        return 100
-    }
-
-    override fun onBindViewHolder(holder: DummyRecyclerAdapter.ViewHolder, position: Int) = Unit
-
-    class ViewHolder(val layout: ConstraintLayout) : RecyclerView.ViewHolder(layout)
 }
