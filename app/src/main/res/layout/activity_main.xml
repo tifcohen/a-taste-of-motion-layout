@@ -11,101 +11,114 @@
     app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/total_balance_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Total Balance:"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/total_balance_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Balance:"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/total_balance_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:elevation="10dp"
-            android:text="123.45$"
-            android:textSize="40sp"
-            android:shadowColor="@color/colorPrimaryDark"
-            android:shadowRadius="1.5"
-            android:shadowDx="1"
-            android:shadowDy="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btn2"
-            app:layout_constraintTop_toBottomOf="@id/total_balance_title" />
+    <TextView
+        android:id="@+id/total_balance_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="10dp"
+        android:shadowColor="@color/colorPrimaryDark"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.5"
+        android:text="123.45$"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/progress_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_balance_title" />
 
-        <ImageButton
-            android:id="@+id/btn1"
-            style="@style/btn_style"
-            android:contentDescription="@string/send_desc"
-            android:src="@drawable/ic_send"
-            app:layout_constraintBottom_toTopOf="@id/card_list"
-            app:layout_constraintEnd_toStartOf="@id/btn2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/total_balance_value" />
+    <TextView
+        android:id="@+id/progress_display"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/total_balance_value"
+        tools:text="progress" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/label1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="1.0"
-            android:text="@string/send_desc"
-            app:layout_constraintEnd_toEndOf="@id/btn1"
-            app:layout_constraintStart_toStartOf="@id/btn1"
-            app:layout_constraintTop_toBottomOf="@id/btn1" />
+    <ImageButton
+        android:id="@+id/btn1"
+        style="@style/btn_style"
+        android:contentDescription="@string/send_desc"
+        android:src="@drawable/ic_send"
+        app:layout_constraintBottom_toBottomOf="@id/btn2"
+        app:layout_constraintEnd_toStartOf="@id/btn2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn2" />
 
-        <ImageButton
-            android:id="@+id/btn2"
-            style="@style/btn_style"
-            android:contentDescription="@string/convert_desc"
-            android:src="@drawable/ic_convert"
-            app:layout_constraintBottom_toTopOf="@id/card_list"
-            app:layout_constraintEnd_toStartOf="@id/btn3"
-            app:layout_constraintStart_toEndOf="@id/btn1"
-            app:layout_constraintTop_toBottomOf="@id/total_balance_value" />
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/send_desc"
+        app:layout_constraintEnd_toEndOf="@id/btn1"
+        app:layout_constraintStart_toStartOf="@id/btn1"
+        app:layout_constraintTop_toBottomOf="@id/btn1" />
 
-        <TextView
-            android:id="@+id/label2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/convert_desc"
-            app:layout_constraintBottom_toTopOf="@id/card_list"
-            app:layout_constraintEnd_toEndOf="@id/btn2"
-            app:layout_constraintStart_toStartOf="@id/btn2"
-            app:layout_constraintTop_toBottomOf="@id/btn2" />
+    <ImageButton
+        android:id="@+id/btn2"
+        style="@style/btn_style"
+        android:contentDescription="@string/convert_desc"
+        android:src="@drawable/ic_convert"
+        app:layout_constraintBottom_toTopOf="@id/card_list"
+        app:layout_constraintEnd_toStartOf="@id/btn3"
+        app:layout_constraintStart_toEndOf="@id/btn1"
+        app:layout_constraintTop_toBottomOf="@id/progress_display" />
 
-        <ImageButton
-            android:id="@+id/btn3"
-            style="@style/btn_style"
-            android:contentDescription="@string/receive_desc"
-            android:src="@drawable/ic_receive"
-            app:layout_constraintBottom_toTopOf="@id/card_list"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btn2"
-            app:layout_constraintTop_toBottomOf="@id/total_balance_value"/>
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/convert_desc"
+        app:layout_constraintEnd_toEndOf="@id/btn2"
+        app:layout_constraintStart_toStartOf="@id/btn2"
+        app:layout_constraintTop_toBottomOf="@id/btn2" />
 
-        <TextView
-            android:id="@+id/label3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/receive_desc"
-            app:layout_constraintBottom_toTopOf="@id/card_list"
-            app:layout_constraintEnd_toEndOf="@id/btn3"
-            app:layout_constraintStart_toStartOf="@id/btn3"
-            app:layout_constraintTop_toBottomOf="@id/btn3" />
+    <ImageButton
+        android:id="@+id/btn3"
+        style="@style/btn_style"
+        android:contentDescription="@string/receive_desc"
+        android:src="@drawable/ic_receive"
+        app:layout_constraintBottom_toBottomOf="@id/btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn2"
+        app:layout_constraintTop_toTopOf="@id/btn2" />
+
+    <TextView
+        android:id="@+id/label3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/receive_desc"
+        app:layout_constraintEnd_toEndOf="@id/btn3"
+        app:layout_constraintStart_toStartOf="@id/btn3"
+        app:layout_constraintTop_toBottomOf="@id/btn3" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="250dp"
-        app:cardUseCompatPadding="true"
         android:elevation="15dp"
         app:cardCornerRadius="4dp"
+        app:cardUseCompatPadding="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
