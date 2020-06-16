@@ -35,7 +35,7 @@
             android:alpha="1.0"
             app:layout_constraintEnd_toEndOf="@id/btn1"
             app:layout_constraintStart_toStartOf="@id/btn1"
-            app:layout_constraintTop_toBottomOf="@id/btn1"/>
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
 
         <Constraint
             android:id="@id/label2"
@@ -45,7 +45,7 @@
             android:alpha="1.0"
             app:layout_constraintEnd_toEndOf="@id/btn2"
             app:layout_constraintStart_toStartOf="@id/btn2"
-            app:layout_constraintTop_toBottomOf="@id/btn2"/>
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
 
         <Constraint
             android:id="@id/label3"
@@ -55,7 +55,7 @@
             android:alpha="1.0"
             app:layout_constraintEnd_toEndOf="@id/btn3"
             app:layout_constraintStart_toStartOf="@id/btn3"
-            app:layout_constraintTop_toBottomOf="@id/btn3"/>
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
 
         <Constraint
             android:id="@id/card_list"
@@ -99,7 +99,7 @@
             app:layout_constraintBottom_toTopOf="@id/card_list"
             app:layout_constraintEnd_toEndOf="@id/btn1"
             app:layout_constraintStart_toStartOf="@id/btn1"
-            app:layout_constraintTop_toBottomOf="@id/btn1"/>
+            app:layout_constraintTop_toBottomOf="@id/btn1" />
 
         <Constraint
             android:id="@id/label2"
@@ -109,7 +109,7 @@
             app:layout_constraintBottom_toTopOf="@id/card_list"
             app:layout_constraintEnd_toEndOf="@id/btn2"
             app:layout_constraintStart_toStartOf="@id/btn2"
-            app:layout_constraintTop_toBottomOf="@id/btn2"/>
+            app:layout_constraintTop_toBottomOf="@id/btn2" />
 
         <Constraint
             android:id="@id/label3"
@@ -119,7 +119,7 @@
             app:layout_constraintBottom_toTopOf="@id/card_list"
             app:layout_constraintEnd_toEndOf="@id/btn3"
             app:layout_constraintStart_toStartOf="@id/btn3"
-            app:layout_constraintTop_toBottomOf="@id/btn3"/>
+            app:layout_constraintTop_toBottomOf="@id/btn3" />
 
         <Constraint
             android:id="@id/card_list"
@@ -143,5 +143,80 @@
             app:onTouchUp="stop"
             app:touchAnchorId="@id/card_list"
             app:touchAnchorSide="top" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                app:framePosition="50"
+                app:motionTarget="@id/btn1" />
+
+            <KeyAttribute
+                android:rotation="360"
+                app:framePosition="100"
+                app:motionTarget="@id/btn1" />
+
+            <KeyAttribute
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:rotation="180"
+                app:framePosition="55"
+                app:motionTarget="@id/btn2" />
+
+            <KeyAttribute
+                android:rotation="360"
+                app:framePosition="100"
+                app:motionTarget="@id/btn2" />
+
+            <KeyAttribute
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:rotation="180"
+                app:framePosition="60"
+                app:motionTarget="@id/btn3" />
+
+            <KeyAttribute
+                android:rotation="360"
+                app:framePosition="100"
+                app:motionTarget="@id/btn3" />
+
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.7"
+                app:framePosition="50"
+                app:motionTarget="@+id/btn1"/>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.65"
+                app:framePosition="70"
+                app:motionTarget="@+id/btn1"/>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.8"
+                app:framePosition="55"
+                app:motionTarget="@+id/btn2"/>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.75"
+                app:framePosition="75"
+                app:motionTarget="@+id/btn2"/>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.9"
+                app:framePosition="60"
+                app:motionTarget="@+id/btn3"/>
+
+            <KeyPosition
+                app:keyPositionType="pathRelative"
+                app:percentX="0.85"
+                app:framePosition="80"
+                app:motionTarget="@+id/btn3"/>
+
+        </KeyFrameSet>
     </Transition>
 </MotionScene>

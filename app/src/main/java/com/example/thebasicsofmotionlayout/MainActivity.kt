@@ -39,9 +39,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onTransitionChange(motionLayout: MotionLayout?, startId: Int, endId: Int, progress: Float) {
-                progress_display.text = "${(progress*100).toInt()}%"
+//                progress_display.text = "${(progress*100).toInt()}%"
             }
         })
+
+        btn1.setOnClickListener {
+            motion_layout.progress = 0.25f
+        }
+        btn2.setOnClickListener {
+            motion_layout.progress = 0.5f
+        }
+        btn3.setOnClickListener {
+            motion_layout.progress = 0.75f
+        }
     }
 
     private fun createList(): List<String> {
