@@ -54,14 +54,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun createList(): List<String> {
-        val list = mutableListOf<String>()
-        for (i in 0..30) {
-            val index = i + 1
-            list.add("Account $index:\nBalance: ${index*(index*10/3)}$")
-        }
-        return list
-    }
+    private fun createList(): List<String> = List(30) {"Account ${it+1}:\nBalance: ${(it+1)*((it+1)*10)/3}$"}
+
 }
 
 class CustomAdapter(private val itemsList: List<String>) : RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
